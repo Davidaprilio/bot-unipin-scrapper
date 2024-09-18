@@ -15,7 +15,7 @@ async function getListProduct(page) {
         return panes.map(pane => {
             return Array.from(pane.querySelectorAll('.card-sizer.o')).map(card => {
                 return {
-                    img: card.querySelector('.card-image img').dataset.src,
+                    img: card.querySelector('.card-image img').dataset.src.replaceAll(' ', '+'),
                     name: card.querySelector('.card-game-title').innerText,
                     publisher: card.querySelector('.card-game-publisher').innerText,
                 }
